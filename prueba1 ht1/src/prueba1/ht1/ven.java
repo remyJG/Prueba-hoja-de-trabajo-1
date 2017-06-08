@@ -57,6 +57,11 @@ public class ven extends javax.swing.JFrame {
         });
 
         jButton2.setText("VERIFICAR VOCALES");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("INVERTIR CADENA");
 
@@ -161,6 +166,35 @@ public class ven extends javax.swing.JFrame {
         jTextField4.setText(String.valueOf(df.format(respuesta1)));
     }
     
+    public void vocales(){
+        String text1 = jTextField1.getText();
+        char[] vector = text1.toCharArray();
+        int contador = 0;
+        
+        for (int x=0;x<vector.length;x++){
+            System.out.println("[" + x + "] " + vector[x]);
+            String letra = String.valueOf(vector[x]);
+            if (letra.equalsIgnoreCase("a")){
+                contador = contador + 1;
+            }else  if (letra.equalsIgnoreCase("e")){
+                contador = contador + 1;
+            }else  if (letra.equalsIgnoreCase("i")){
+                contador = contador + 1;
+            }else  if (letra.equalsIgnoreCase("o")){
+                contador = contador + 1;
+            }else  if (letra.equalsIgnoreCase("u")){
+                contador = contador + 1;
+            }
+            System.out.println(contador);
+            if(contador >= 5){
+                jTextField4.setText("CUMPLE");
+            } else{
+                jTextField4.setText("NO CUMPLE");
+            }
+        }
+    
+    }
+    
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -169,6 +203,11 @@ public class ven extends javax.swing.JFrame {
         // TODO add your handling code here:
         calcularHipotemusa();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        vocales();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
