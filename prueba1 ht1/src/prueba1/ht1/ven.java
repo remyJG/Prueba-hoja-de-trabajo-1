@@ -64,6 +64,11 @@ public class ven extends javax.swing.JFrame {
         });
 
         jButton3.setText("INVERTIR CADENA");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("REGLA 3");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -195,6 +200,44 @@ public class ven extends javax.swing.JFrame {
     
     }
     
+    public void invertirCadena(){  
+        System.out.println("holis");
+        String text1 = jTextField1.getText();
+        System.out.println(text1);
+        
+        char[] vector1 = text1.toCharArray();
+        char[] reverse1 = new char[vector1.length];
+        int f=0;
+        for (int i= vector1.length-1; i>=0; i--){
+            System.out.println(vector1[i]);
+            
+                reverse1[f] = vector1[i];
+                System.out.println("holis"+ reverse1[f]);
+                f++;
+        }
+        
+        System.out.println("holiscaracolis");
+        String text2 = jTextField2.getText();
+        System.out.println(text2);
+        
+        char[] vector2 = text2.toCharArray();
+        char[] reverse2 = new char[vector2.length];
+        int g=0;
+        for (int j= vector2.length-1; j>=0; j--){
+            System.out.println(vector2[j]);
+            
+                reverse2[g] = vector2[j];
+                System.out.println("holis"+ reverse2[g]);
+                g++;
+        }
+        
+        String salida1 = new String(reverse1);
+        String salida2 = new String(reverse2);
+        System.out.println(salida1);
+        System.out.println(salida2);
+        jTextField4.setText(salida1 + " " + salida2 );   
+    }
+    
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -208,6 +251,11 @@ public class ven extends javax.swing.JFrame {
         // TODO add your handling code here:
         vocales();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        invertirCadena();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
