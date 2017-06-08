@@ -238,8 +238,21 @@ public class ven extends javax.swing.JFrame {
         jTextField4.setText(salida1 + " " + salida2 );   
     }
     
+    private void regla3(){
+        int text1 = Integer.parseInt(jTextField1.getText());
+        int text2 = Integer.parseInt(jTextField2.getText());
+        int text3 = Integer.parseInt(jTextField3.getText());
+        
+        int resultado1 = text3*text2;
+        int resultado2 = resultado1/text1;
+        
+        System.out.println(resultado2);
+        jTextField4.setText(String.valueOf(resultado2));
+    }
+    
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        regla3();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
